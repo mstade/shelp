@@ -1,3 +1,33 @@
+#!/bin/awk -f
+
+# This script will read a simple subset of yaml
+# and outputs text that can be sourced by a
+# shell. Any keys set in the yaml file will be
+# used verbatim in the output. The supported
+# yaml constructs are:
+# 
+# - properties (key: value)
+#
+# - inline lists (key: [value1, value2, ...]
+#
+# - simple lists:
+#       key:
+#           -value1
+#           -value2
+#           ...
+#
+# - lists with multiple values:
+#       key:
+#           -subkey1: value)
+#               subsubkey1: value
+#               subsubkey2: value
+#
+#           -subkey2
+#               subsubkey3: value
+#
+# For more information and documentation, see:
+# https://github.com/mstade/shelp/yaml2sh/
+
 NR == 1 {
     "pwd" | getline cwd;
     "date" | getline date;
