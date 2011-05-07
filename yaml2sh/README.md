@@ -8,13 +8,19 @@ I found myself having the need for declaring simple properties files quite often
 
 ## Usage
 ### Parsing a file to stdout
+```sh
 yaml2sh myfile
+```
 
 ### Parsing a file, storing the result in another file
+```sh
 yaml2sh myfile > somefile
+```
 
 ### Parsing a file and sourcing the result to shell variables
+```sh
 source `yaml2sh myfile`
+```
 
 # YAML support
 The yaml2sh script can't parse any YAML, it only supports a subset. This may change in the future.
@@ -26,7 +32,7 @@ Simple key value pairs will be turned into simple variables, where the key is va
 key: value
 ```
 
-```shell
+```sh
 key="value"
 ```
 
@@ -37,6 +43,6 @@ Inline lists are supported and will be outputted as a simple shell array.
 key: [value1, value2, value3]
 ```
 
-```shell
+```sh
 key=( "value1" "value2" "value3" )
 ```
