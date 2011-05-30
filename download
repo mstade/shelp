@@ -1,8 +1,0 @@
-#!/bin/sh
-source="$1"
-target="${2:-${source##*/}}"
-
-printf "\e[1;34m"
-echo "# $source => $target"
-curl --create-dir -#fSLko "$target" "$source"
-printf "\e[m"
