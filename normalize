@@ -1,0 +1,15 @@
+#!/bin/bash
+
+E_BADARGS=65
+
+if [ ! -n "$1" ]
+then
+    echo "Usage: normalize filepattern"
+    exit $E_BADARGS
+fi
+
+for file in $(find . -name "$1" -type f)
+do
+    normalized="$(expand -t 4 $file)"
+    echo "$normalized" > "$file"
+done
