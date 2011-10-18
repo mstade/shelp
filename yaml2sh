@@ -8,7 +8,7 @@
 # 
 # - properties (key: value)
 #
-# - inline lists (key: [value1, value2, ...]
+# - inline lists (key: [value1, value2, ...])
 #
 # - simple lists:
 #       key:
@@ -18,7 +18,7 @@
 #
 # - lists with multiple values:
 #       key:
-#           -subkey1: value)
+#           -subkey1: (value)
 #               subsubkey1: value
 #               subsubkey2: value
 #
@@ -124,3 +124,4 @@ function printList(name, values, count) {
 {
     print "#:" NR " " $0;
 }
+
